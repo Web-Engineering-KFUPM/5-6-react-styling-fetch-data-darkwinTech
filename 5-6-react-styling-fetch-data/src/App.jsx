@@ -405,6 +405,7 @@ function App() {
             &copy; 2024 User Management Dashboard
           </p>
         </Container>
+
       </footer>
     </div>
   )
