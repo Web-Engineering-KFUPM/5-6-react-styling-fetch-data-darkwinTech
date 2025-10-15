@@ -352,10 +352,26 @@ function App() {
 
   }, [])
 
+    // filter users by search term
+    useEffect(() => {
+        if (!searchTerm) {
+            setFilteredUsers(users)
+        } else {
+            const filtered = users.filter(user =>
+                user.name.toLowerCase().includes(searchTerm.toLowerCase())
+            )
+            setFilteredUsers(filtered)
+        }
+    }, [searchTerm, users])
+
   const handleUserClick = (user) => {
+      setSelectedUser(user)
+      setShowModal(true)
   }
 
   const handleCloseModal = () => {
+      setShowModal(false)
+      setSelectedUser(null)
   }
 
   return (
