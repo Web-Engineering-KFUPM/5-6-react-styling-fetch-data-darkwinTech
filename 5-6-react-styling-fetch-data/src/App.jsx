@@ -399,7 +399,7 @@ function App() {
         <UserModal show={showModal} user={selectedUser} onHide={handleCloseModal} />
       </Container>
 
-      <footer className="">
+      <footer className="bg-light py-4 mt-5">
         <Container>
           <p className="text-center text-muted mb-0">
             &copy; 2024 User Management Dashboard
