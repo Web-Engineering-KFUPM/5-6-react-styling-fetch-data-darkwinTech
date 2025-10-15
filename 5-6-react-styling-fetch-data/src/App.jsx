@@ -383,14 +383,20 @@ function App() {
         </Container>
       </header>
 
-      <Container className="">
-        <SearchBar />
+      <Container className="mb-4">
+        <SearchBar searchTerm={searchTerm} onSearchChange={setSearchTerm} />
 
         {/* {loading && <Spinner ... />} */}
         {/* {error && <Alert ...>{error}</Alert>} */}
         {/* <UserList users={filteredUsers} onUserClick={handleUserClick} /> */}
+          {loading && <Spinner animation="border" className="d-block mx-auto my-4" />}
+          {error && <Alert variant="danger">{error}</Alert>}
 
-        <UserModal />
+          {!loading && !error && (
+              <UserList users={filteredUsers} onUserClick={handleUserClick} />
+          )}
+
+        <UserModal show={showModal} user={selectedUser} onHide={handleCloseModal} />
       </Container>
 
       <footer className="">
