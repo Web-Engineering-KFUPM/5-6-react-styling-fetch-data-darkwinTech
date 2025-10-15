@@ -1,3 +1,11 @@
+// TODO 1.5: Add bootstrap properties in User Card
+// File: src/components/UserCard.jsx
+//
+// - Use <Button> components from react-bootstrap inside the </Card.Body> tag.
+// - Write text of the button View Details.
+// - Add onClick function in the button onClick={() => onUserClick(user)}.
+
+
 import React from 'react'
 import { Card, Button } from 'react-bootstrap'
 
@@ -18,6 +26,9 @@ function UserCard({ user, onUserClick }) {
           <strong>Phone:</strong> {user.phone}
         </Card.Text>
       {/* Buttotn*/}
+         <Button variant="primary" onClick={() => onUserClick(user)}>
+             View Details
+         </Button>
       
       </Card.Body>
     </Card>
